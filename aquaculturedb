@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS tbprofile(
 								collate utf8_general_ci NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS tbfarm(
+ยังไม่ได้เชื่อม CREATE TABLE IF NOT EXISTS tbfarm(
 		farmid		int(11)		auto_increment NOT NULL,
 		userid		int(11)		 NOT NULL,
 		posid		int(11)		 NOT NULL,
