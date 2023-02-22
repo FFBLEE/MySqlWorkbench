@@ -28,5 +28,57 @@ ADD	constraint FK_Profile_Prefixname		foreign key (prefid)
 alter table testtable
   add constraint primary key (a);
   
-  
+ การเลือกเเสดงข้อมูล
+ 
+ USE aquaculturedb;
+SELECT * FROM tbgeographies; (เเสดงทั้งหมด)
+
+SELECT geographid, geographthname FROM tbgeographies; (ระบุ)
+
+SELECT geographid as 'รหัสภูมิภาค', geographthname as 'ภูมิภาค' FROM tbgeographies; (เเสดงข้อมูลด้วยเปลี่ยนชื่อหัวข้อได้)
+
+SELECT * FROM tbgeographies
+WHERE geographid = 1;      (เลือกฟิวที่มีไอดีเท่ากับ 1 )
+
+SELECT * FROM tbgeographies
+WHERE geographid = 1 or geographid = 3;
+
+SELECT * FROM tbgeographies
+WHERE geographenname LIKE 'North%'; (ไว้ค้าหาคำการเพิ่ม % ไว้เเทนคำที่เราจำไม่ได้)
+
+SELECT * FROM tbgeographies
+WHERE geographthname LIKE 'ภา%'
+
+SELECT * FROM tbprovince
+ORDER BY provincethname; (เรียกใช้แบบเรียงตามตัวอักษร)
+
+SELECT * FROM tbprovince
+ORDER BY provincethname ASC; (เรียงจากน้อยไปมาก)
+
+SELECT * FROM tbprovince
+ORDER BY provincethname DESC; (จากมากไปน้อย)
+
+SELECT * FROM tbgeographies
+WHERE geographid IN (1,5); (เอาเเค่ตัวที่มี 1 และ 5)
+
+SELECT * FROM tbgeographies
+WHERE geographid NOT IN (1,5); (เอาทุกตัวยกเว้น 1 และ 5)
+
+SELECT geographid, provincecode, provincethname FROM tbprovince
+WHERE geographid between 3 and 5 
+ORDER BY provinceenname; (เลิอกข้อมูลจากฟิวด้านบน หาไอดี ระหว่าง 3 และ 5 และเรียงตามตัวอักษร)
+
+SELECT MAX(geographid) from tbprovince; (หาค่าที่มากที่สุด)
+
+SELECT sum(geographid) as 'ผลรวม' from tbprovince;
+SELECT MAX(geographid) as 'ค่าสูงสุด' from tbprovince;
+
+SELECT sum(geographid) as 'ผลรวม' from tbprovince
+group by geographid; (เลิอกให้รวมตามกลุ่ม )          
+SELECT geographid, sum(geographid) as 'ผลรวม' from tbprovince
+group by geographid;
+
+
+
+
 */
