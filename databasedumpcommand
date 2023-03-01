@@ -1,0 +1,4 @@
+open cmd in xmampp
+
+
+mysqldump -u root -p aquaculturedb tbgeographies > test.sql
