@@ -78,7 +78,58 @@ group by geographid; (เลิอกให้รวมตามกลุ่ม 
 SELECT geographid, sum(geographid) as 'ผลรวม' from tbprovince
 group by geographid;
 
+ 
+ insert into tbgeographies(geographthname) values('ภาคเสมมุติ');
+ 
+ select * from tbgeographies;
+ 
+ select * from tbprovince inner join tbgeographies
+ on tbprovince.geographid = tbgeographies.geographid
+where tbgeographies.geographid in (2,4,6)
+ order by tbprovince.geographid;
 
-
-
+ select * from tbprovince as a inner join tbgeographies as b
+ on a.geographid = b.geographid
+where a.geographid in (2,4,6)
+ order by b.geographid;
+ 
+ select a.provinceid , a.provincethname, b.geographthname
+ from tbprovince as a inner join tbgeographies as b
+ on a.geographid = b.geographid
+where a.geographid not in (2,4,6)
+ order by b.geographid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a left join tbgeographies as b
+ on a.geographid = b.geographid
+ order by b.provinceid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a right join tbgeographies as b
+ on a.geographid = b.geographid
+ order by a.provinceid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a right join tbgeographies as b
+ on a.geographid = b.geographid
+ where a.provincethname is not null
+ order by a.provinceid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a right join tbgeographies as b
+ on a.geographid = b.geographid
+ where a.provinceid >= 40 
+ order by a.provinceid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a right join tbgeographies as b
+ on a.geographid = b.geographid
+ where not( a.provinceid >= 40) 
+ order by a.provinceid;
+ 
+ select a.provinceid , a.provincethname, b.geographid, b.geographthname
+ from tbprovince as a right join tbgeographies as b
+ on a.geographid = b.geographid
+ where a.provinceid < 40 
+ order by a.provinceid;
 */
