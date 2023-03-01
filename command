@@ -132,4 +132,12 @@ where a.geographid not in (2,4,6)
  on a.geographid = b.geographid
  where a.provinceid < 40 
  order by a.provinceid;
+
+
+
+อัพเดท
+UPDATE tbgeographies set geographenname ='Assume'
+where geographid = 7;
+
+
 */
