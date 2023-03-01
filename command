@@ -138,6 +138,10 @@ where a.geographid not in (2,4,6)
 อัพเดท
 UPDATE tbgeographies set geographenname ='Assume'
 where geographid = 7;
+การลบ
+delete from  tbgeographies
+where geographid = 8;
+
 
 
 */
