@@ -50,7 +50,7 @@ ord.quantityOrdered, ord.priceEach,
 ord.quantityOrdered*ord.priceEach as total from orderdetails as ord 
 INNER JOIN products as p 
 ON ord.productCode = p.productCode
-WHERE ord.orderNumber = 10145;
+WHERE ord.orderNumber = orderid;
 END //
 
 DELIMITER ;
