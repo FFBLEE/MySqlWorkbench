@@ -42,6 +42,8 @@ DELIMITER ;
 
 CALL getProducts();
 
+การโปรแกรมให้หาด้วยเราไม่ต้องมาเขียนซ้ำโดยเปลี่ยนเลขที่ call ด้านล่าง
+
 DELIMITER //
 CREATE PROCEDURE getOrders(IN orderid int)
 BEGIN
@@ -54,4 +56,6 @@ WHERE ord.orderNumber = orderid;
 END //
 
 DELIMITER ;
+
+Call getOrders(10165);
 
