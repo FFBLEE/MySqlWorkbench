@@ -207,4 +207,3 @@ ALTER table tbprofile
 ADD	constraint FK_Profile_Prefixname		foreign key (prefid)
 	REFERENCES tbprefixname	(prefid)		ON UPDATE CASCADE;
 
-
